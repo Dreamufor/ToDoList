@@ -8,11 +8,7 @@ const Todos = ({todos, deleteTodo}) => {
         //map through that list and return JSX
         todos.map(todo => {
             return(
-                <div className="collection-item" key={todo.id}>
-                    {/* delete todo,  wrap this in an anonymous function, array function*/}
-                <span>{todo.content}</span>
-                <button onClick={() => deleteTodo(todo.id)} className="right waves-effect waves-light btn-small">Delete</button>
-                </div>
+                    <li className="collection-item" key={todo.id}><label><input type="checkbox"/><span>{todo.content}</span></label><a href="#!" onClick={() => deleteTodo(todo.id)} className="secondary-content" style={{color: '#ff8a65'}}><i className="material-icons">delete</i></a></li>               
             ) 
             }
         )
@@ -21,9 +17,11 @@ const Todos = ({todos, deleteTodo}) => {
     )
 
     return (
-        <div className="todos collection">
+        <ul className="collection">
         {todoList}
-        </div>
+        </ul>
+       
+
     )
 }
 
